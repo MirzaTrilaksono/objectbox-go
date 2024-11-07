@@ -33,7 +33,20 @@ type Version struct {
 }
 
 func (v Version) LessThan(other Version) bool {
-	return v.Major < other.Major || v.Minor < other.Minor || v.Patch < other.Patch
+	//return v.Major < other.Major || v.Minor < other.Minor || v.Patch < other.Patch
+	if v.Major > other.Major {
+		return false
+	}
+	if v.Minor > other.Minor {
+		return false
+	}
+	if v.Patch > other.Patch {
+		return false
+	}
+	if (v.Major == other.Major && v.Minor == other.Minor && v.Patch == other.Patch){
+		return false
+	}
+	return true
 }
 
 func (v Version) GreaterThanOrEqualTo(other Version) bool {
