@@ -1,5 +1,6 @@
 module github.com/MirzaTrilaksono/objectbox-go
 
+
 go 1.11
 
 require (
